@@ -1,0 +1,17 @@
+{
+  // 与第 4 章的差异只有三行：jsx、module、moduleResolution（打包工具接管模块解析）
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler", // 交给 Vite 解析 import：不用写扩展名
+    "jsx": "react-jsx", // JSX 编译成 react/jsx-runtime 的函数调用
+    "noEmit": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "types": ["vite/client"], // import.meta.env、导入 .css 等 Vite 特有类型
+    "skipLibCheck": true
+  },
+  "include": ["src", "vite.config.ts"]
+}
