@@ -31,7 +31,7 @@
 | | 06 | State 与渲染：什么时候重渲染，状态该放哪 | [06-state-rendering.md](chapters/06-state-rendering.md) | 已发布 |
 | | 07 | 副作用：你可能不需要 useEffect | [07-effects.md](chapters/07-effects.md) | 已发布 |
 | | 08 | 组件设计：组合、受控表单、自定义 Hook | [08-component-design.md](chapters/08-component-design.md) | 已发布 |
-| | 09 | 服务端状态：TanStack Query 与缓存失效 | `09-server-state.md` | 待发布 |
+| | 09 | 服务端状态：TanStack Query 与缓存失效 | [09-server-state.md](chapters/09-server-state.md) | 已发布 |
 | 样式篇 | 10 | Tailwind CSS + shadcn/ui：快速搭出像样的界面 | `10-tailwind-shadcn.md` | 待发布 |
 | Next.js 篇 | 11 | Next.js App Router：路由、布局与约定 | `11-nextjs-routing.md` | 待发布 |
 | | 12 | 渲染模式：CSR / SSR / SSG / RSC 与 hydration | `12-rendering-modes.md` | 待发布 |
@@ -67,6 +67,7 @@ tslearn/
 │   ├── 06-state-rendering.md
 │   ├── 07-effects.md
 │   ├── 08-component-design.md
+│   ├── 09-server-state.md
 │   └── assets/                   # 章节截图
 └── code/                         # 每章实战代码，可独立运行
     ├── ch01-request-journey/     # 零依赖：Node 原生 http + 原生 JS 页面
@@ -76,7 +77,8 @@ tslearn/
     ├── ch05-react-mental-model/  # Vite 8 + React 19：用组件重写第 1 章笔记页
     ├── ch06-state-rendering/     # useReducer 重构 + 渲染实验室 + React Compiler 对比
     ├── ch07-effects/             # 前后端联调：useEffect 拉数据、取消请求、竞态实验室
-    └── ch08-component-design/    # useNotes Hook、Card 组合、受控表单两道校验、UserContext
+    ├── ch08-component-design/    # useNotes Hook、Card 组合、受控表单两道校验、UserContext
+    └── ch09-server-state/        # TanStack Query：缓存、去重、失效、乐观更新与回滚
 ```
 
 ## 环境要求
