@@ -1,0 +1,24 @@
+{
+  // tsconfig 允许写注释（JSONC 格式）。每个选项的含义见第 4 章积木 4-2
+  "compilerOptions": {
+    // ---- 输出目标 ----
+    "target": "esnext", // 产出的 JS 语法版本：用最新语法，Node 22 都认识
+    "module": "nodenext", // 模块系统：按 Node 的规则解析 import（看 package.json 的 "type"）
+    "noEmit": true, // 只检查不产出：运行交给 node 擦除类型
+
+    // ---- 严格程度 ----
+    "strict": true, // 一次打开一整组严格检查（TS 7 默认就是 true，写出来更明确）
+    "noUncheckedIndexedAccess": true, // arr[0] 的类型带上 | undefined
+    "exactOptionalPropertyTypes": false, // 先不开：区分「没有这个字段」和「字段值是 undefined」，后面再讲
+
+    // ---- 和「node 直接跑 .ts」配套 ----
+    "allowImportingTsExtensions": true, // 允许 import './x.ts'（node 要求写真实扩展名）
+    "erasableSyntaxOnly": true, // 禁止 enum / namespace / 参数属性等需要生成代码的语法
+    "verbatimModuleSyntax": true, // 只用于类型的导入必须写 import type，保证擦除后不残留
+
+    // ---- 其它 ----
+    "types": ["node"], // 只加载 @types/node 的全局类型（TS 7 默认是空数组）
+    "skipLibCheck": true // 不检查 node_modules 里的 .d.ts，加快速度
+  },
+  "include": ["src"]
+}

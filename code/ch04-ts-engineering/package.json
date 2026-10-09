@@ -1,0 +1,22 @@
+{
+  "name": "cloudnote-ch04-ts-engineering",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "第 4 章实战：tsconfig、ES 模块与 Zod 运行时校验",
+  "scripts": {
+    "start": "node src/main.ts",
+    "server": "node src/server.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "^7.0.2"
+  },
+  "engines": {
+    "node": ">=22.18"
+  }
+}
