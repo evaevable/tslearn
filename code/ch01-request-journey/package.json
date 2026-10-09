@@ -1,0 +1,14 @@
+{
+  "name": "cloudnote-ch01-request-journey",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "第 1 章实战：零依赖跑通一次完整的前后端请求",
+  "scripts": {
+    "dev": "node --watch server.ts",
+    "start": "node server.ts"
+  },
+  "engines": {
+    "node": ">=22.18"
+  }
+}

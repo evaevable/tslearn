@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CloudNote ch01</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 560px; margin: 40px auto; padding: 0 16px; color: #222; }
+    form { display: flex; gap: 8px; margin-bottom: 16px; }
+    input { flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 6px; }
+    button { padding: 8px 14px; border: 0; border-radius: 6px; background: #185fa5; color: #fff; cursor: pointer; }
+    button:disabled { background: #999; }
+    li { padding: 6px 0; border-bottom: 1px solid #eee; }
+    .muted { color: #888; font-size: 13px; }
+    .error { color: #a32d2d; }
+  </style>
+</head>
+<body>
+  <h1>CloudNote</h1>
+  <p class="muted">第 1 章：用原生 JS 手动维护"状态 -> 界面"，体会为什么需要 React</p>
+
+  <form id="form">
+    <input id="title" placeholder="写一条笔记标题" />
+    <button id="submit" type="submit">添加</button>
+  </form>
+  <p id="status" class="muted"></p>
+  <ul id="list"></ul>
+
+  <script type="module">
+    // ---- 状态（state）：页面上所有"会变的东西" ----
+    const state = { notes: [], loading: false, error: '' }
+
+    // ---- 渲染（render）：根据 state 画界面 ----
+    // 注意：每次 state 变了，都得记得手动调 render()。忘一次，界面就和数据不一致。
+    // 第 5 章的 React 会把这件事自动化：UI = f(state)
+    function render() {
+      document.getElementById('status').textContent = state.loading ? '加载中...' : `共 ${state.notes.length} 条`
+      document.getElementById('status').className = state.error ? 'error' : 'muted'
+      if (state.error) document.getElementById('status').textContent = state.error
+      document.getElementById('submit').disabled = state.loading
+      document.getElementById('list').innerHTML = state.notes
+        .map((n) => `<li>#${n.id} ${escapeHtml(n.title)}</li>`)
+        .join('')
+    }
+
+    // 防 XSS：用户输入不能直接拼进 innerHTML（第 14 章细讲）
+    function escapeHtml(s) {
+      return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+    }
+
+    async function loadNotes() {
+      state.loading = true; state.error = ''; render()
+      try {
+        const res = await fetch('/api/notes')
+        const data = await res.json()
+        state.notes = data.records
+      } catch (e) {
+        state.error = '加载失败：' + e.message
+      } finally {
+        state.loading = false; render()
+      }
+    }
+
+    document.getElementById('form').addEventListener('submit', async (e) => {
+      e.preventDefault()
+      const input = document.getElementById('title')
+      state.loading = true; state.error = ''; render()
+      try {
+        const res = await fetch('/api/notes', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ title: input.value }),
+        })
+        const data = await res.json()
+        if (!res.ok) throw new Error(data.error)
+        state.notes = [...state.notes, data]
+        input.value = ''
+      } catch (err) {
+        state.error = '添加失败：' + err.message
+      } finally {
+        state.loading = false; render()
+      }
+    })
+
+    loadNotes()
+  </script>
+</body>
+</html>
