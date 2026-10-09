@@ -25,7 +25,7 @@
 |---|---|---|---|---|
 | 序 | 01 | 全栈地图：一次点击的完整旅程 | [01-fullstack-map.md](chapters/01-fullstack-map.md) | 已发布 |
 | TS 篇 | 02 | TypeScript 类型系统：给 JS 装上编译期护栏 | [02-ts-basics.md](chapters/02-ts-basics.md) | 已发布 |
-| | 03 | TS 进阶：泛型、类型收窄、工具类型与异步 | `03-ts-advanced.md` | 待发布 |
+| | 03 | TS 进阶：泛型、类型收窄、工具类型与异步 | [03-ts-advanced.md](chapters/03-ts-advanced.md) | 已发布 |
 | | 04 | TS 工程化：tsconfig、模块、Zod 运行时校验 | `04-ts-engineering.md` | 待发布 |
 | React 篇 | 05 | React 心智模型：UI = f(state) | `05-react-mental-model.md` | 待发布 |
 | | 06 | State 与渲染：什么时候重渲染，状态该放哪 | `06-state-rendering.md` | 待发布 |
@@ -60,10 +60,12 @@ tslearn/
 ├── README.md
 ├── chapters/                     # 每章讲义
 │   ├── 01-fullstack-map.md
-│   └── 02-ts-basics.md
+│   ├── 02-ts-basics.md
+│   └── 03-ts-advanced.md
 └── code/                         # 每章实战代码，可独立运行
     ├── ch01-request-journey/     # 零依赖：Node 原生 http + 原生 JS 页面
-    └── ch02-ts-basics/           # 类型建模 + 类型擦除演示，tsc 7（Go 原生版）做检查
+    ├── ch02-ts-basics/           # 类型建模 + 类型擦除演示，tsc 7（Go 原生版）做检查
+    └── ch03-ts-advanced/         # 泛型仓储、Result、工具类型、事件循环与并发
 ```
 
 ## 环境要求

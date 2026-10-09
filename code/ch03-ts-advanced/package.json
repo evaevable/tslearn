@@ -1,0 +1,18 @@
+{
+  "name": "cloudnote-ch03-ts-advanced",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "第 3 章实战：泛型、类型收窄、工具类型与异步",
+  "scripts": {
+    "start": "node src/main.ts",
+    "async": "node src/async-demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  },
+  "engines": {
+    "node": ">=22.18"
+  }
+}
