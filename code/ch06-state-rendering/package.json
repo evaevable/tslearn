@@ -1,0 +1,29 @@
+{
+  "name": "cloudnote-ch06-state-rendering",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "第 6 章实战：渲染机制、批量更新、useReducer 与 React Compiler",
+  "scripts": {
+    "dev": "vite",
+    "dev:compiler": "vite --mode compiler",
+    "build": "tsc --noEmit && vite build",
+    "build:compiler": "tsc --noEmit && vite build --mode compiler",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^8.0.7",
+    "@rolldown/plugin-babel": "^0.2.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  }
+}

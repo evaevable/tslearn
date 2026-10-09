@@ -28,7 +28,7 @@
 | | 03 | TS 进阶：泛型、类型收窄、工具类型与异步 | [03-ts-advanced.md](chapters/03-ts-advanced.md) | 已发布 |
 | | 04 | TS 工程化：tsconfig、模块、Zod 运行时校验 | [04-ts-engineering.md](chapters/04-ts-engineering.md) | 已发布 |
 | React 篇 | 05 | React 心智模型：UI = f(state) | [05-react-mental-model.md](chapters/05-react-mental-model.md) | 已发布 |
-| | 06 | State 与渲染：什么时候重渲染，状态该放哪 | `06-state-rendering.md` | 待发布 |
+| | 06 | State 与渲染：什么时候重渲染，状态该放哪 | [06-state-rendering.md](chapters/06-state-rendering.md) | 已发布 |
 | | 07 | 副作用：你可能不需要 useEffect | `07-effects.md` | 待发布 |
 | | 08 | 组件设计：组合、受控表单、自定义 Hook | `08-component-design.md` | 待发布 |
 | | 09 | 服务端状态：TanStack Query 与缓存失效 | `09-server-state.md` | 待发布 |
@@ -64,13 +64,15 @@ tslearn/
 │   ├── 03-ts-advanced.md
 │   ├── 04-ts-engineering.md
 │   ├── 05-react-mental-model.md
+│   ├── 06-state-rendering.md
 │   └── assets/                   # 章节截图
 └── code/                         # 每章实战代码，可独立运行
     ├── ch01-request-journey/     # 零依赖：Node 原生 http + 原生 JS 页面
     ├── ch02-ts-basics/           # 类型建模 + 类型擦除演示，tsc 7（Go 原生版）做检查
     ├── ch03-ts-advanced/         # 泛型仓储、Result、工具类型、事件循环与并发
     ├── ch04-ts-engineering/      # tsconfig 逐项注释、ES 模块、Zod 校验重写服务端
-    └── ch05-react-mental-model/  # Vite 8 + React 19：用组件重写第 1 章笔记页
+    ├── ch05-react-mental-model/  # Vite 8 + React 19：用组件重写第 1 章笔记页
+    └── ch06-state-rendering/     # useReducer 重构 + 渲染实验室 + React Compiler 对比
 ```
 
 ## 环境要求
