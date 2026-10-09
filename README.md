@@ -24,7 +24,7 @@
 | 篇 | 章 | 标题 | 文件 | 状态 |
 |---|---|---|---|---|
 | 序 | 01 | 全栈地图：一次点击的完整旅程 | [01-fullstack-map.md](chapters/01-fullstack-map.md) | 已发布 |
-| TS 篇 | 02 | TypeScript 类型系统：给 JS 装上编译期护栏 | `02-ts-basics.md` | 待发布 |
+| TS 篇 | 02 | TypeScript 类型系统：给 JS 装上编译期护栏 | [02-ts-basics.md](chapters/02-ts-basics.md) | 已发布 |
 | | 03 | TS 进阶：泛型、类型收窄、工具类型与异步 | `03-ts-advanced.md` | 待发布 |
 | | 04 | TS 工程化：tsconfig、模块、Zod 运行时校验 | `04-ts-engineering.md` | 待发布 |
 | React 篇 | 05 | React 心智模型：UI = f(state) | `05-react-mental-model.md` | 待发布 |
@@ -59,9 +59,11 @@ AI 协作原则：
 tslearn/
 ├── README.md
 ├── chapters/                     # 每章讲义
-│   └── 01-fullstack-map.md
+│   ├── 01-fullstack-map.md
+│   └── 02-ts-basics.md
 └── code/                         # 每章实战代码，可独立运行
-    └── ch01-request-journey/     # 零依赖：Node 原生 http + 原生 JS 页面
+    ├── ch01-request-journey/     # 零依赖：Node 原生 http + 原生 JS 页面
+    └── ch02-ts-basics/           # 类型建模 + 类型擦除演示，tsc 7（Go 原生版）做检查
 ```
 
 ## 环境要求

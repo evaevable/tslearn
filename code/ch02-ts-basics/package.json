@@ -1,0 +1,18 @@
+{
+  "name": "cloudnote-ch02-ts-basics",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "第 2 章实战：TypeScript 类型系统与 CloudNote 数据建模",
+  "scripts": {
+    "start": "node src/main.ts",
+    "erasure": "node src/erasure-demo.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  },
+  "engines": {
+    "node": ">=22.18"
+  }
+}
