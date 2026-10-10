@@ -1,0 +1,20 @@
+{
+  // 前端（src，交给 Vite）和后端（server，交给 node）共用一份配置
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "allowImportingTsExtensions": true, // server 用 node 直接跑，import 要写 .ts
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "types": ["vite/client", "node"],
+    "skipLibCheck": true,
+    // 路径别名：@/components/ui/button -> ./src/components/ui/button（TS 7 已移除 baseUrl，paths 直接写相对路径）
+    "paths": { "@/*": ["./src/*"] }
+  },
+  "include": ["src", "server", "vite.config.ts"]
+}
