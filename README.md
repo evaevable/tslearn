@@ -33,7 +33,7 @@
 | | 08 | 组件设计：组合、受控表单、自定义 Hook | [08-component-design.md](chapters/08-component-design.md) | 已发布 |
 | | 09 | 服务端状态：TanStack Query 与缓存失效 | [09-server-state.md](chapters/09-server-state.md) | 已发布 |
 | 样式篇 | 10 | Tailwind CSS + shadcn/ui：快速搭出像样的界面 | [10-tailwind-shadcn.md](chapters/10-tailwind-shadcn.md) | 已发布 |
-| Next.js 篇 | 11 | Next.js App Router：路由、布局与约定 | `11-nextjs-routing.md` | 待发布 |
+| Next.js 篇 | 11 | Next.js App Router：路由、布局与约定 | [11-nextjs-routing.md](chapters/11-nextjs-routing.md) | 已发布 |
 | | 12 | 渲染模式：CSR / SSR / SSG / RSC 与 hydration | `12-rendering-modes.md` | 待发布 |
 | | 13 | 数据层：Server Actions、Route Handlers 与 PostgreSQL | `13-data-layer.md` | 待发布 |
 | | 14 | 鉴权与安全：登录态、权限、XSS / CSRF / CORS | `14-auth-security.md` | 待发布 |
@@ -69,6 +69,7 @@ tslearn/
 │   ├── 08-component-design.md
 │   ├── 09-server-state.md
 │   ├── 10-tailwind-shadcn.md
+│   ├── 11-nextjs-routing.md
 │   └── assets/                   # 章节截图
 └── code/                         # 每章实战代码，可独立运行
     ├── ch01-request-journey/     # 零依赖：Node 原生 http + 原生 JS 页面
@@ -80,7 +81,8 @@ tslearn/
     ├── ch07-effects/             # 前后端联调：useEffect 拉数据、取消请求、竞态实验室
     ├── ch08-component-design/    # useNotes Hook、Card 组合、受控表单两道校验、UserContext
     ├── ch09-server-state/        # TanStack Query：缓存、去重、失效、乐观更新与回滚
-    └── ch10-tailwind-shadcn/     # Tailwind v4 + shadcn/ui 重写界面：设计令牌、暗色、响应式、Dialog
+    ├── ch10-tailwind-shadcn/     # Tailwind v4 + shadcn/ui 重写界面：设计令牌、暗色、响应式、Dialog
+    └── cloudnote/                # 主线项目（Next.js 16 App Router），第 11 章起逐章演进
 ```
 
 ## 环境要求
