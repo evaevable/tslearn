@@ -7,6 +7,7 @@ import { cn } from 'cn'
 const LINKS = [
   { href: '/', label: '首页' },
   { href: '/notes', label: '笔记' },
+  { href: '/lab/ssg', label: '渲染实验室' },
 ] as const
 
 export function MainNav() {
@@ -17,7 +18,7 @@ export function MainNav() {
         CloudNote
       </Link>
       {LINKS.map((link) => {
-        const active = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href)
+        const active = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href.split('/').slice(0, 2).join('/'))
         return (
           <Link
             key={link.href}
