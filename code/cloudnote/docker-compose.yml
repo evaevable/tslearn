@@ -1,0 +1,15 @@
+# 一条命令起一个 PostgreSQL：docker compose up -d
+# 本机没装 Docker 也可以用 Homebrew 的 Postgres，见本章正文
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: cloudnote
+      POSTGRES_PASSWORD: cloudnote
+      POSTGRES_DB: cloudnote
+    ports:
+      - '5432:5432'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+volumes:
+  db-data:

@@ -17,7 +17,7 @@ export async function PATCH(request: Request, ctx: Ctx) {
   const { id } = await ctx.params
   const parsed = UpdateNoteInputSchema.safeParse(await request.json())
   if (!parsed.success) return Response.json({ error: z.flattenError(parsed.error).formErrors.join('；') }, { status: 422 })
-  const note = updateNote(Number(id), parsed.data)
+  const note = await updateNote(Number(id), parsed.data)
   return note ? Response.json(note) : Response.json({ error: 'NOT_FOUND' }, { status: 404 })
 }
 
@@ -25,5 +25,5 @@ export async function DELETE(request: Request, ctx: Ctx) {
   const failed = await guard(request)
   if (failed) return failed
   const { id } = await ctx.params
-  return deleteNote(Number(id)) ? new Response(null, { status: 204 }) : Response.json({ error: 'NOT_FOUND' }, { status: 404 })
+  return (await deleteNote(Number(id))) ? new Response(null, { status: 204 }) : Response.json({ error: 'NOT_FOUND' }, { status: 404 })
 }

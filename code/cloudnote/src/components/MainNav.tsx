@@ -10,6 +10,15 @@ const LINKS = [
   { href: '/lab/ssg', label: '渲染实验室' },
 ] as const
 
+// 静态部分：不读 pathname，用作 <Suspense> 的 fallback（读 URL 的组件必须能有一个不读 URL 的替身）
+export function MainNavFallback() {
+  return (
+    <nav className="flex items-center gap-4" aria-label="主导航">
+      <span className="text-lg font-semibold tracking-tight">CloudNote</span>
+    </nav>
+  )
+}
+
 export function MainNav() {
   const pathname = usePathname()
   return (
